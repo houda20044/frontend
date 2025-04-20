@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Accueil</title>
+  <link rel="icon" href="https://e7.pngegg.com/pngimages/172/872/png-clipart-houari-boumediene-airport-boeing-737-air-algerie-airline-paris-orly-airport-algerie-text-trademark.png" type="image/jpg">
+  <link rel="stylesheet" href="home2.css">
+</head>
+<body>
+
+  <header>
+    <div class="logo-container">
+      <img src="http://siriusalgeria.net/cs/aa1.jpg" alt="Logo Air Algérie" class="logo">
+    </div>
+    <p class="bienvenue">Bienvenue, <span class="nom-employe">Houda</span></p>
+  </header>
+
+  <main class="contenu">
+    <div class="title-container">
+      <h1>Liste des demandes de congé</h1>
+      <button id="btnDemandeConge" class="btn-demande">
+        <img src="https://tse2.mm.bing.net/th?id=OIP.FIjN6TLvXCWdre1ik_EzUQHaHa&pid=Api&P=0&h=220" alt="Icône congé" class="btn-icon">
+        Demande de congé
+      </button>
+    </div>
+    
+    <!-- Formulaire de demande de congé (initialement caché) -->
+    <div id="formContainer" class="form-container" style="display: none;">
+      <h2>Demander un congé</h2>
+      <form id="formConge">
+        <label for="natureConge">Nature du congé:</label>
+        <input type="text" id="natureConge" name="natureConge" required>
+
+        <label for="motifConge">Motif:</label>
+        <textarea id="motifConge" name="motifConge" required></textarea>
+
+        <label for="dateDebut">Date de début:</label>
+        <input type="date" id="dateDebut" name="dateDebut" required>
+
+        <label for="dateRetour">Date prévue du retour:</label>
+        <input type="date" id="dateRetour" name="dateRetour" required>
+
+        <label for="dureeConge">Durée:</label>
+        <input type="number" id="dureeConge" name="dureeConge" required>
+
+        <label for="observations">Observations:</label>
+        <textarea id="observations" name="observations"></textarea>
+
+        <button type="submit">Soumettre</button>
+        <button type="button" id="cancelBtn">Annuler</button>
+      </form>
+    </div>
+
+    <!-- Tableau des congés -->
+    <div id="tableContainer" class="table-container">
+      <table class="table-conges">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Nature</th>
+            <th>Motif</th>
+            <th>Date de début</th>
+            <th>Date prévue du retour</th>
+            <th>Durée</th>
+            <th>Observations</th>
+            <th>Validation</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </main>
+
+  <script>
+    // Variables
+    const btnDemandeConge = document.getElementById('btnDemandeConge');
+    const formContainer = document.getElementById('formContainer');
+    const tableContainer = document.getElementById('tableContainer');
+    const cancelBtn = document.getElementById('cancelBtn');
+
+    // Afficher le formulaire et cacher le tableau
+    btnDemandeConge.onclick = function() {
+      formContainer.style.display = "block";
+      tableContainer.style.display = "none";
+    }
+
+    // Annuler la demande et retourner à la page initiale
+    cancelBtn.onclick = function() {
+      formContainer.style.display = "none";
+      tableContainer.style.display = "block";
+    }
+  </script>
+
+</body>
+</html>

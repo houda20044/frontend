@@ -1,0 +1,88 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(to right, #d80000, #f4dede);
+}
+
+header {
+  background: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 30px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+}
+
+.logo-container img {
+  height: 50px;
+  margin-right: 10px;
+}
+
+.welcome {
+  font-size: 1.1em;
+}
+
+.welcome span {
+  color: red;
+  font-weight: bold;
+}
+
+.cards-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  padding: 60px 30px;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.card {
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  width: 300px;
+  text-align: center;
+  padding: 30px 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.card i, .card img {
+  font-size: 50px;
+  margin-bottom: 15px;
+}
+
+.card h3 {
+  margin: 10px 0 10px;
+}
+
+.card p {
+  font-size: 0.95em;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+.card button {
+  background-color: #007bff;
+  border: none;
+  color: white;
+  padding: 8px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.card button:hover {
+  background-color: #0056b3;
+}

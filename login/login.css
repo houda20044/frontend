@@ -7,7 +7,7 @@
 
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: linear-gradient(to right, #c00, #f5f5f5);
+   background-image: url('https://www.aerotime.aero/images/Air-Algerie-Boeing.jpg');
     height: 100vh;
     display: flex;
     flex-direction: column;

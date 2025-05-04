@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Connexion - Air Algérie</title>
     <link rel="icon" href="https://e7.pngegg.com/pngimages/172/872/png-clipart-houari-boumediene-airport-boeing-737-air-algerie-airline-paris-orly-airport-algerie-text-trademark.png" type="image/png">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="login.css">
 </head>
 <body>
     <header>
@@ -43,34 +43,6 @@
         </div>
     </main>
 
-    <script>
-        document.getElementById('loginForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            // Récupération des valeurs du formulaire
-            const username = document.getElementById('username').value;
-            const password = document.getElementById('password').value;
-            
-            // Appel de l'API pour récupérer tous les employés
-            fetch('http://localhost:8080/api/employe/employes') // Assurez-vous que l'API est bien exposée à cette URL
-                .then(response => response.json())
-                .then(employes => {
-                    // Chercher l'utilisateur dans la liste des employés
-                    const user = employes.find(employe => employe.email === username && employe.motdepasse === password);
-                    
-                    if (user) {
-                        // Redirection après connexion réussie
-                        window.location.href = 'accueil.html';
-                    } else {
-                        // Affichage d'un message d'erreur si l'utilisateur n'est pas trouvé
-                        alert("Nom d'utilisateur ou mot de passe incorrect.");
-                    }
-                })
-                .catch(error => {
-                    console.error('Erreur de connexion à l\'API:', error);
-                    alert("Une erreur est survenue. Veuillez réessayer.");
-                });
-        });
-    </script>
+    <script src="/js/login.js"></script>
 </body>
 </html>

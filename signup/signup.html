@@ -1,96 +1,80 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inscription - Air Algérie</title>
-    <link rel="icon" href="https://e7.pngegg.com/pngimages/172/872/png-clipart-houari-boumediene-airport-boeing-737-air-algerie-airline-paris-orly-airport-algerie-text-trademark.png" type="image/png">
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inscription - Air Algérie</title>
+  <link rel="icon" href="https://e7.pngegg.com/pngimages/172/872/png-clipart-houari-boumediene-airport-boeing-737-air-algerie-airline-paris-orly-airport-algerie-text-trademark.png" type="image/png">
+  <link rel="stylesheet" href="signup.css">
 </head>
+
 <body>
-    <header>
-        <div class="logo-container">
-            <img src="http://siriusalgeria.net/cs/aa1.jpg" alt="Logo Air Algérie" class="logo">
-            <span class="company-name">Air Algérie</span>
-        </div>
-    </header>
+  <!-- Header conservé -->
+  <header>
+    <div class="logo-container">
+      <img src="http://siriusalgeria.net/cs/aa1.jpg" alt="Logo Air Algérie" class="logo">
+      <span class="company-name"></span>
+    </div>
+  </header>
 
-    <main class="signup-container">
-        <div class="signup-box">
-            <h2 class="signup-title">Créer un compte</h2>
-            
-            <form id="signupForm">
-                <div class="form-group">
-                    <label for="fullname">Nom Complet</label>
-                    <input type="text" id="fullname" name="fullname" required>
-                </div>
-                
-                <div class="form-group">
-                    <label for="email">Email</label>
-                    <input type="email" id="email" name="email" required>
-                </div>
-                
-                <div class="form-group">
-                    <label for="password">Mot de passe</label>
-                    <input type="password" id="password" name="password" required minlength="6">
-                </div>
-                
-                <div class="form-group">
-                    <label for="confirmPassword">Confirmer le mot de passe</label>
-                    <input type="password" id="confirmPassword" name="confirmPassword" required>
-                </div>
-                
-                <button type="submit" class="btn-signup">S'inscrire</button>
-                
-                <div id="errorMessage" class="error-message"></div>
-            </form>
-            
-            <div class="signup-footer">
-                <p>Vous avez déjà un compte ? <a href="../login/login.html">Connectez-vous ici</a></p>
-            </div>
-            
-        </div>
-    </main>
+  <!-- Contenu principal -->
+  <main class="signup-container">
+    <div class="signup-box">
+      <h2 class="signup-title">Créer un compte employé</h2>
 
-    <script>
-        document.getElementById('signupForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            // Récupération des valeurs
-            const fullname = document.getElementById('fullname').value;
-            const email = document.getElementById('email').value;
-            const password = document.getElementById('password').value;
-            const confirmPassword = document.getElementById('confirmPassword').value;
-            const errorElement = document.getElementById('errorMessage');
-            
-            // Réinitialiser les messages d'erreur
-            errorElement.textContent = '';
-            errorElement.style.display = 'none';
-            
-            // Validation
-            if (password !== confirmPassword) {
-                showError("Les mots de passe ne correspondent pas");
-                return;
-            }
-            
-            if (password.length < 6) {
-                showError("Le mot de passe doit contenir au moins 6 caractères");
-                return;
-            }
-            
-            // Si validation OK
-            console.log("Inscription réussie:", { fullname, email });
-            alert("Inscription réussie ! Redirection...");
-            window.location.href = "login.html"; // Redirection après inscription
-            
-            function showError(message) {
-                errorElement.textContent = message;
-                errorElement.style.display = 'block';
-                setTimeout(() => {
-                    errorElement.style.display = 'none';
-                }, 3000);
-            }
-        });
-    </script>
+      <form id="signupForm">
+        <div class="form-group">
+          <label for="name">Prénom</label>
+          <input type="text" id="name" required>
+        </div>
+
+        <div class="form-group">
+          <label for="lastname">Nom</label>
+          <input type="text" id="lastname" required>
+        </div>
+
+        <div class="form-group">
+          <label for="dateEntree">Date d'entrée</label>
+          <input type="date" id="dateEntree" required>
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" required>
+        </div>
+
+        <div class="form-group">
+          <label for="motdepasse">Mot de passe</label>
+          <input type="password" id="motdepasse" minlength="6" required>
+        </div>
+
+        <div class="form-group">
+          <label for="confirmPassword">Confirmer mot de passe</label>
+          <input type="password" id="confirmPassword" required>
+        </div>
+
+        <div class="form-group">
+          <label for="roleId">Rôle <small>(1 = Admin, 2 = Employé)</small></label>
+          <input type="number" id="roleId" min="1" max="2" placeholder="1 ou 2" required>
+        </div>
+
+        <div class="form-group">
+          <label for="idAffectation">ID Affectation</label>
+          <input type="number" id="idAffectation" required>
+        </div>
+
+        <div class="form-group">
+          <label for="idFonction">ID Fonction</label>
+          <input type="number" id="idFonction" required>
+        </div>
+
+        <button type="submit"><a href="../login/login.html" class="btn-signup">S'inscrire</a>
+        </button>
+        <div id="errorMessage" class="error-message"></div>
+      </form>
+    </div>
+  </main>
+
+  <script src="/js/signup.js" ></script>
 </body>
 </html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <title>Demandes de congé</title>
+  <link rel="stylesheet" href="demandes.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+  <header>
+    <div class="logo-container">
+      <img src="http://siriusalgeria.net/cs/aa1.jpg" alt="Logo Air Algérie" class="logo">
+    </div>
+  </header>
+
+  <aside class="sidebar">
+    <nav>
+      <ul>
+        <li><a href="../acceuil/acceuil.html"><i class="fas fa-home"></i><span>Accueil</span></a></li>
+        <li><a href="../droits/droits.html"><i class="fas fa-star"></i><span>Droits de congé</span></a></li>
+        <li><a href="../titres/titres.html"><i class="fas fa-file-alt"></i><span>Titres de congé</span></a></li>
+        <li><a href="../demandes/demandes.html"><i class="fas fa-pen"></i><span>Demandes</span></a></li>
+      </ul>
+    </nav>
+  </aside>
+
+  <main class="main-content">
+    <h1>Demandes de congé</h1>
+    <button id="openModalBtn" class="modal-btn">Nouvelle demande</button>
+
+    <!-- Modal -->
+    <div id="demandeModal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <h3>Ajouter une demande de congé :</h3>
+        <form id="demandeForm">
+          <label for="matricule">Matricule :</label>
+          <input type="number" id="matricule" required><br>
+
+          <label for="datededemande">Date de la demande :</label>
+          <input type="date" id="datededemande" required><br>
+
+          <label for="duree">Durée (en jours) :</label>
+          <input type="number" id="duree" required><br>
+
+          <label for="typeconge">Type de congé :</label>
+          <select id="typeconge" required>
+            <option value="1">Annuel</option>
+            <option value="2">Maladie</option>
+            <option value="3">Exceptionnel</option>
+          </select><br>
+
+          <button type="submit" class="submit-btn">Ajouter</button>
+        </form>
+      </div>
+    </div>
+
+    <h3>Liste des demandes de congé :</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Nature du congé</th>
+          <th>Motif</th>
+          <th>Date début</th>
+          <th>Date retour</th>
+          <th>Durée</th>
+          <th>Observations</th>
+          <th>Validé par</th>
+        </tr>
+      </thead>
+      <tbody id="demandeTableBody">
+        
+      </tbody>
+    </table>
+  </main><script src="/js/demandes.js"></script></body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <title>Droits de congé</title>
+  <link rel="stylesheet" href="titres.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+  <header>
+    <div class="logo-container">
+      <img src="http://siriusalgeria.net/cs/aa1.jpg" alt="Logo Air Algérie" class="logo">
+    </div>
+  </header>
+
+  <aside class="sidebar">
+    <nav>
+      <ul>
+        <li><a href="../acceuil/acceuil.html"><i class="fas fa-home"></i><span>Accueil</span></a></li>
+        <li><a href="../droits/droits.html"><i class="fas fa-star"></i><span>Droits de congé</span></a></li>
+        <li><a href="../titres/titres.html"><i class="fas fa-file-alt"></i><span>Titres de congé</span></a></li>
+        <li><a href="../demandes/demandes.html"><i class="fas fa-pen"></i><span>Demandes</span></a></li>
+      </ul>
+    </nav>
+  </aside>
+
+  <main class="main-content">
+    <h1>titres de congé</h1>
+    <button id="openModalBtn" class="modal-btn">Demander un titre de congé</button>
+
+    <!-- MODAL -->
+    <div id="droitModal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <h3>Ajouter un titre de congé :</h3>
+        <form id="droitForm">
+          <label for="matricule">Matricule:</label>
+          <input type="number" id="matricule" required><br>
+
+          <label for="exercice">ID Exercice:</label>
+          <input type="number" id="exercice" required><br>
+
+          <label for="consommes">Jours consommés:</label>
+          <input type="number" id="consommes" required><br>
+
+          <label for="restants">Jours restants:</label>
+          <input type="number" id="restants" required><br>
+
+          <button type="submit" class="submit-btn">Ajouter</button>
+        </form>
+      </div>
+    </div>
+
+    <h3>Liste des titres de congé des employés :</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Nom</th>
+          <th>Poste</th>
+          <th>Jours consonnés</th>
+          <th>Jours réstants</th>
+          <th>Solde</th>
+        </tr>
+      </thead>
+      <tbody id="titreTableBody">
+        <!-- les données seront insérées ici -->
+      </tbody>
+    </table>
+  </main>
+
+  <script src="js/titres.js"></script>
+</body>
+</html>

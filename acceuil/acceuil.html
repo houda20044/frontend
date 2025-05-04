@@ -8,37 +8,57 @@
 </head>
 <body>
 
-  <header>
-    <div class="logo-container">
-      <img src="https://e7.pngegg.com/pngimages/172/872/png-clipart-houari-boumediene-airport-boeing-737-air-algerie-airline-paris-orly-airport-algerie-text-trademark.png" alt="Logo Air Algérie">
-    </div>
-    <div class="welcome">Bienvenue, <span>Houda</span></div>
-  </header>
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <nav>
+      <ul>
+        <li><a href="../acceuil/acceuil.html"></a><i class="fas fa-home"></i> <span>Accueil</span></li>
+        <li><a href="../droits/droits.html"><i class="fas fa-star"></i> <span>Droits de congé</span></a></li>
+        <li><a href="../titres/titres.html"><i class="fas fa-file-alt"></i> <span>Titres de congé </span> </a></li>
+        <li><a href="../demandes/demandes.html"><i class="fas fa-pen"></i><span>Demandes</span> </a></li>
+      </ul>
+    </nav>
+  </aside>
 
-  <section class="cards-container">
+  <!-- Contenu principal -->
+  <div class="main-container">
 
-    <div class="card" onclick="alert('Accès à vos titres de congé')">
-      <img src="https://cdn-icons-png.flaticon.com/512/4762/4762315.png" alt="Titres" width="60">
-      <h3>Vos titres de congé</h3>
-      <p>Consultez vos titres et soldes de congé.</p>
-      <button>Voir</button>
-    </div>
+    <!-- Header -->
+    <header>
+      <div class="logo-container">
+        <img src="http://siriusalgeria.net/cs/aa1.jpg" alt="Logo Air Algérie" class="logo">
+        
+      </div>
+    </header>
 
-    <div class="card" onclick="alert('Accès à vos droits de congé')">
-      <i class="fas fa-star"></i>
-      <h3>Vos droits de congé</h3>
-      <p>Informez-vous sur vos droits de congé annuels.</p>
-      <button>Voir</button>
-    </div>
+    <!-- Contenu principal -->
+    <main class="main-content">
+      <h1>Bienvenue !</h1>
+      <section class="cards-container">
+        <div class="card">
+          <img src="https://cdn-icons-png.flaticon.com/512/4762/4762315.png" alt="Titres" width="60">
+          <h3>Vos titres de congé</h3>
+          <p>Consultez vos titres et soldes de congé.</p>
+          <button>Voir</button>
+        </div>
+        <div class="card">
+          <i class="fas fa-star fa-3x"></i>
+          <h3>Vos droits de congé</h3>
+          <p>Informez-vous sur vos droits de congé annuels.</p>
+          <button >Voir</button>
+        </div>
+        <div class="card">
+          <i class="fas fa-pen fa-3x"></i>
+          <h3>Vos demandes de congé</h3>
+          <p>Créez ou consultez vos demandes de congé.</p>
+          <button>Demander</button>
+        </div>
+      </section>
+    </main>
 
-    <div class="card" onclick="alert('Accès à vos demandes de congé')">
-      <i class="fas fa-pen"></i>
-      <h3>Vos demandes de congé</h3>
-      <p>Créez ou consultez vos demandes de congé.</p>
-      <button>Demander</button>
-    </div>
+  </div>
 
-  </section>
+  <script src="/js/acceuil.js"></script>
 
 </body>
 </html>
